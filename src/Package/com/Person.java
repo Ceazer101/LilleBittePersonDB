@@ -1,8 +1,8 @@
 package Package.com;
 
 public class Person implements java.lang.Comparable {
-    private String firstname;
-    private String lastname;
+    private final String firstname;
+    private final String lastname;
 
     public Person(String firstname, String lastname) {
         this.firstname = firstname;

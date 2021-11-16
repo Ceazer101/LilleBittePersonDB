@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class Application {
 
-    private ArrayList<Person> persons;
+    private final ArrayList<Person> persons;
 
     public Application() {
         persons = new ArrayList<>();

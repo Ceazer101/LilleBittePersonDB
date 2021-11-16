@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class UserInterface {
 
-    private Application application;
+    private final Application application;
 
     public UserInterface(Application application) {
         this.application = application;
@@ -31,10 +31,10 @@ public class UserInterface {
         System.out.println("""
                 Main menu
                 ---------
-                1) List all person 
+                1) List all person
                 2) Create new person
                 3) Delete person
-                4) Sorter liste
+                4) Sorter list
             
                 0) Exit application
                 """);
