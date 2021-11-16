@@ -5,24 +5,50 @@ import java.util.Collections;
 
 public class Application {
 
-    private ArrayList<Person> persons = new ArrayList<>();
+    private ArrayList<Person> persons;
 
-    public Application(){
-        addPerson(new Person("Kenneth", "Lønfeldt"));
-        addPerson(new Person("Chris", "Lønborg"));
-        addPerson(new Person("Güler", "Nur"));
+    public Application() {
+        persons = new ArrayList<>();
     }
 
-    public void sortPerson(){
+    public void start() {
+        UserInterface ui = new UserInterface(this);
+        ui.start();
+    }
+
+    public void sort(){
         Collections.sort(persons);
     }
 
-
-    public void addPerson(Person Person){
-        persons.add(Person);
+    public static void main(String[] args) {
+        new Application().start();
     }
 
-    public ArrayList<Person> getPersons() {
+    public Iterable<Person> getAllPeople() {
         return persons;
     }
+
+    public void createNewPerson(String firstName, String lastName){
+        Person person = new Person(firstName, lastName);
+        persons.add(person);
+    }
+
+    public void deletePerson(String firstName){
+        Person person = findPerson(firstName);
+        if(person == null){
+            System.out.println("This person does not exist");
+        } else {
+            persons.remove(person);
+        }
+    }
+
+    public Person findPerson(String firstName){
+        for (Person person : persons) {
+            if(person.getFirstname().equalsIgnoreCase(firstName)){
+                return person;
+            }
+        }
+        return null;
+    }
+
 }

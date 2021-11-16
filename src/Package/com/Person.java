@@ -9,19 +9,16 @@ public class Person implements java.lang.Comparable {
         this.lastname = lastname;
     }
 
+    public String getFirstname() {
+        return firstname;
+    }
+
     @Override
     public String toString() {
         return lastname + " " + firstname;
     }
 
     public int compareTo(Object other) {
-        /*String ourFirstname = firstname;
-        String otherFirstname = anotherPerson.firstname;
-        if(ourFirstname.compareTo(otherFirstname) <= 0){
-            return -1;
-        } else {
-            return 1;
-        }*/
         Person anotherPerson = (Person) other;
         return firstname.compareTo(anotherPerson.firstname);
     }
