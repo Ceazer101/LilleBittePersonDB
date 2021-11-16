@@ -78,7 +78,6 @@ public class UserInterface {
 
         application.createNewPerson(firstname,lastname);
 
-        // When created a new animal, show the list again
         list();
     }
 
